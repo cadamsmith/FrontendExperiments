@@ -37,14 +37,6 @@ body {
             hsla(20, 0%, 0%, 0.3) 20%,
             hsla(0, 0%, 0%, 1)
         );
-
-        transform: translateY(65%);
-        transition: transform 500ms ease;
-
-        *:not(.card-title) {
-            opacity: 0;
-            transition: opacity 500ms linear;
-        }
     
         .card-title {
             position: relative;
@@ -59,8 +51,6 @@ body {
             left: calc(#{$padding} * -1);
             bottom: -2px;
             background: $clr-accent-400;
-
-            transform: scaleX(0);
             transform-origin: left;
             transition: transform 500ms ease;
         }
@@ -71,21 +61,55 @@ body {
     }
 }
 
-.card:hover,
-.card:focus-within {
-    transform: scale(1.05);
-
-    .card-title::after {
-        transform: scaleX(1);
-    }
-
+@media (hover) {
     .card-content {
-        transform: translateY(0);
-        transition-delay: 500ms;
+        transform: translateY(65%);
+        transition: transform 500ms ease;
+
+        .card-title::after {
+            transform: scaleX(0);
+        }
 
         *:not(.card-title) {
-            opacity: 1;
-            transition-delay: 1000ms;
+            opacity: 0;
+            transition: opacity 500ms linear;
+        }
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    
+        .card-title::after {
+            transform: scaleX(1);
+        }
+    
+        .card-content {
+            transform: translateY(0);
+            transition-delay: 500ms;
+    
+            *:not(.card-title) {
+                opacity: 1;
+                transition-delay: 1000ms;
+            }
+        }
+    }
+    
+    .card:focus-within {
+        transform: scale(1.05);
+    
+        .card-title::after {
+            transform: scaleX(1);
+        }
+    
+        .card-content {
+            transform: translateY(0);
+            transition-delay: 500ms;
+            transition-duration: 0ms;
+    
+            *:not(.card-title) {
+                opacity: 1;
+                transition-delay: 1000ms;
+            }
         }
     }
 }
@@ -97,9 +121,22 @@ body {
     color: $clr-neutral-900;
     background-color: $clr-accent-400;
     padding: .5em 1.25em;
+    border-radius: 0.25em;
 }
 
 .button:hover,
 .button:focus {
     background-color: $clr-neutral-100;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition-delay: 0ms !important;
+    }
 }
