@@ -32,9 +32,9 @@ $dark-blue: #5a6dba;
 
 body {
     margin: 0;
-    font-family: $body-font;
-    font-weight: 400;
-    font-size: 10px;
+    font-family: $body-font !important;
+    font-weight: 400 !important;
+    font-size: 10px !important;
     color: $black;
     text-transform: uppercase;
 }
@@ -62,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
 
 // Table and board
 
-.table {
+.board-table {
 	padding-left: 50px;
 	padding-right: 50px;
 }
@@ -130,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
 
 // Rows of spaces
 
-.row {
+.board-row {
 	display: grid;
 	grid-gap: 2px;
 }
@@ -144,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
 	grid-template-columns: 125px;
 	grid-template-rows: repeat(9, 80px);
 
-	.container {
+	.space-container {
 		top: 50%;
 		left: 50%;
 	}
@@ -159,7 +159,7 @@ h1, h2, h3, h4, h5, h6 {
 	grid-column: 1;
 	grid-row: 2 / 11;
 
-	.container {
+	.space-container {
 		transform: translate(-50%, -50%) rotate(90deg);
 	}
 }
@@ -168,7 +168,7 @@ h1, h2, h3, h4, h5, h6 {
 	grid-column: 2 / 11;
 	grid-row: 1;
 
-	.container {
+	.space-container {
 		transform: rotate(180deg);
 	}
 }
@@ -177,7 +177,7 @@ h1, h2, h3, h4, h5, h6 {
 	grid-column: 11;
 	grid-row: 2 / 11;
 
-	.container {
+	.space-container {
 		transform: translate(-50%, -50%) rotate(270deg);
 	}
 }
@@ -193,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
 	background: $board;
 	text-align: center;
 
-	.container {
+	.space-container {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -218,7 +218,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .corner {
-	.container {
+	.space-container {
 		justify-content: space-around;
 		height: 100%;
 		width: 100%;
@@ -280,7 +280,7 @@ h1, h2, h3, h4, h5, h6 {
 	grid-row: 11 / 12;
 	position: relative;
 
-	.container {
+	.space-container {
 		justify-content: flex-start;
 		transform: rotate(315deg);
 	}
@@ -335,7 +335,7 @@ h1, h2, h3, h4, h5, h6 {
 		padding-top: 5px;
 	}
 
-	.container {
+	.space-container {
 		align-items: center;
 		transform: rotate(45deg);
 	}
@@ -374,7 +374,7 @@ h1, h2, h3, h4, h5, h6 {
 	grid-column: 1;
 	grid-row: 1 / 2;
 
-	.container {
+	.space-container {
 		justify-content: center;
 		transform: rotate(135deg);
 	}
@@ -395,7 +395,7 @@ h1, h2, h3, h4, h5, h6 {
 	grid-column: 11;
 	grid-row: 1 / 1;
 
-	.container {
+	.space-container {
 		justify-content: center;
 		transform: rotate(225deg);
 	}
@@ -414,7 +414,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .chance {
-	.container {
+	.space-container {
 		justify-content: flex-start;
 
         .name {
@@ -433,7 +433,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .community-chest {
-	.container {
+	.space-container {
 		justify-content: space-around;
 	}
 
@@ -462,7 +462,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .income-tax {
-	.container {
+	.space-container {
 		justify-content: center;
 		align-items: center;
 	}
@@ -508,4 +508,14 @@ h1, h2, h3, h4, h5, h6 {
 .three-line-name {
 	position: relative;
 	top: 5px;
+}
+
+// =================
+// FUNCTIONALITY
+// =================
+
+#startModal {
+	.modal-body {
+		height: 20rem;
+	}
 }
