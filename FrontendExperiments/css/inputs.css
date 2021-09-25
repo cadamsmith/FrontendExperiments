@@ -1,9 +1,15 @@
 body {
-    background-color: black !important;
+    background: rgb(12,0,50);
+    background: radial-gradient(circle, rgba(12,0,50,1) 0%, rgba(25,0,97,1) 50%, rgba(36,0,144,1) 100%);
 }
 
 .card, .button, .form-control {
     border-radius: .75rem !important;
+}
+
+.input-card {
+    background-color: #282828 !important;
+    color: white !important;
 }
 
 .input-card:hover {
@@ -19,6 +25,12 @@ body {
 
 .card-body-input {
     margin-bottom: 1rem;
+    font-size: 30px;
+    color: #212529;
+}
+
+.card-body-input > input {
+    font-size: 30px;
 }
   
 .icon-input {
@@ -33,7 +45,6 @@ body {
         width: 1.5rem;
         text-align: center;
         font-style: normal;
-        font-size: 30px;
     }
 
     .icon-input-left > i {
@@ -47,3 +58,7 @@ body {
     .icon-input-left > input {
         padding-left: 1.5rem;
     }
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #3500d3 !important;
+}

@@ -2,7 +2,7 @@ var elements = document.getElementsByClassName("dollar-amount-no-sign");
 
 Array.from(elements).forEach(function (el) {
     el.addEventListener('keydown', beforeInputDollarAmount);
-    //el.addEventListener("focusout", onFocusOutInputDollarAmount);
+    el.addEventListener("focusout", onFocusOutInputDollarAmount);
 });
 
 function beforeInputDollarAmount(e) {
