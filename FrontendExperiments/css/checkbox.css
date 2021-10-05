@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+#myCheckbox {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 2rem;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f9;
+}
+
+.checkbox {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+
+    overflow: hidden;
+}
+
+.checkbox-input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.checkbox-input:checked + .checkbox-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #2260ff;
+}
+.checkbox-input:checked + .checkbox-tile:before {
+  transform: scale(1);
+  opacity: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' id='SvgjsSvg1001' width='288' height='288' version='1.1'%3E%3Cdefs id='SvgjsDefs1002'/%3E%3Cg id='SvgjsG1008' transform='matrix(1,0,0,1,0,0)'%3E%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' class='svg-inline--fa fa-check-circle fa-w-16' data-icon='check-circle' data-prefix='fas' viewBox='0 0 512 512' width='288' height='288'%3E%3Cpath fill='%232260ff' d='M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z' class='colorcurrentColor svgShape'/%3E%3C/svg%3E%3C/g%3E%3C/svg%3E");
+}
+.checkbox-input:checked + .checkbox-tile .checkbox-icon, .checkbox-input:checked + .checkbox-tile .checkbox-label {
+  color: #2260ff;
+}
+.checkbox-input:focus + .checkbox-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+}
+.checkbox-input:focus + .checkbox-tile:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.checkbox-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.checkbox-tile:before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: #fff;
+  top: 4%;
+  left: 4%;
+  width: auto;
+  height: auto;
+  height: 18%;
+  width: 18%;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: center;
+  transition: 0.25s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' id='SvgjsSvg1011' width='288' height='288' version='1.1'%3E%3Cdefs id='SvgjsDefs1012'/%3E%3Cg id='SvgjsG1013'%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='288' height='288' viewBox='0 0 1792 1792'%3E%3Cpath d='M896 256q-130 0-248.5 51t-204 136.5-136.5 204-51 248.5 51 248.5 136.5 204 204 136.5 248.5 51 248.5-51 204-136.5 136.5-204 51-248.5-51-248.5-136.5-204-204-136.5-248.5-51zm768 640q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z' fill='%23b5bfd9' class='color000 svgShape'/%3E%3C/svg%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.checkbox-tile:hover {
+  border-color: #2260ff;
+}
+.checkbox-tile:hover:before {
+  transform: scale(1);
+  transform-origin: top-right;
+  opacity: 1;
+}
+
+.checkbox-icon {
+  transition: 0.375s ease;
+  color: #494949;
+  width: 50%;
+  height: 50%;
+}
+.checkbox-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.checkbox-label {
+  color: #707070;
+  transition: 0.375s ease;
+  text-align: center;
+}
